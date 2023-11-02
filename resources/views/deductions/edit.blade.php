@@ -1,27 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h2>Edit Deduction Record</h2>
+<div class="container mx-auto p-6">
+    <h2 class="text-2xl font-semibold mb-4">Edit Deduction Record</h2>
 
-    <form method="post" action="{{ route('deductions.update', $deduction->id) }}">
+    <form method="post" action="{{ route('deductions.update', $deduction->id) }}" class="bg-white shadow-md rounded px-8 py-6 mb-4">
         @csrf
         @method('PUT')
-        <div class="form-group">
-            <label for="name">Name:</label>
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
             <input type="text" class="form-control" name="name" id="name" value="{{ $deduction->name }}" required>
         </div>
-        <div class="form-group">
-            <label for="amount">Amount:</label>
+        <div class="mb-4">
+            <label for="amount" class="block text-gray-700 text-sm font-bold mb-2">Amount:</label>
             <input type="number" class="form-control" name="amount" id="amount" value="{{ $deduction->amount }}" required>
         </div>
-        <div class="form-group">
-            <label for="description">Description:</label>
+        <div class="mb-4">
+            <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
             <textarea class="form-control" name="description" id="description">{{ $deduction->description }}</textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Update Deduction</button>
-        <a href="{{ route('deductions.index') }}" class="btn btn-primary">Go Back</a>
-
+        <div class="flex space-x-2">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transform hover:scale-105 transition duration-300">Update Deduction</button>
+            <a href="{{ route('deductions.index') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transform hover:scale-105 transition duration-300">Go Back</a>
+        </div>
     </form>
 </div>
 @endsection

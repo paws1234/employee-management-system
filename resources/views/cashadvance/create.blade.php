@@ -1,29 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h2>Create New Cash Advance</h2>
+<div class="container mx-auto p-6">
+    <h2 class="text-2xl font-semibold mb-4">Create New Cash Advance</h2>
+
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <form method="post" action="{{ route('cashadvance.store') }}">
             @csrf
-            <div class="form-group">
-                <label for="employee_id">Employee:</label>
-                <select class="form-control" name="employee_id" id="employee_id">
+
+            <div class="mb-4">
+                <label for="employee_id" class="block text-gray-700 text-sm font-bold mb-2">Employee:</label>
+                <select class="form-select" name="employee_id" id="employee_id">
                     @foreach ($employees as $employee)
-                        <option value="{{ $employee->id }}">{{ $employee->first_name}}</option>
+                        <option value="{{ $employee->id }}">{{ $employee->first_name }}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="form-group">
-                <label for="amount">Amount:</label>
-                <input type="number" step="0.01" class="form-control" name="amount" id="amount" required>
+
+            <div class="mb-4">
+                <label for="amount" class="block text-gray-700 text-sm font-bold mb-2">Amount:</label>
+                <input type="number" step="0.01" class="form-input" name="amount" id="amount" required>
             </div>
-            <div class="form-group">
-                <label for="date">Date:</label>
-                <input type="date" class="form-control" name="date" id="date" required>
+
+            <div class="mb-4">
+                <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Date:</label>
+                <input type="date" class="form-input" name="date" id="date" required>
             </div>
-           
-            <button type="submit" class="btn btn-primary">Create Cash Advance</button>
-            <a href="{{ route('cashadvance.index') }}" class="btn btn-primary">Go Back</a>
+
+            <div class="flex space-x-2">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Create Cash Advance</button>
+                <a href="{{ route('cashadvance.index') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Go Back</a>
+            </div>
         </form>
     </div>
+</div>
 @endsection
