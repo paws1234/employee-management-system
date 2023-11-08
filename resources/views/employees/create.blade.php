@@ -29,10 +29,14 @@
             <label for="password" class="block text-gray-600">Password:</label>
             <input type="password" class="form-input" name="password" id="password" placeholder="Enter password" required>
         </div>
-        <div class="mb-4">
-            <button type="submit" class="btn btn-primary transform hover:scale-105 transition duration-300">Create Employee</button>
-            <a href="{{ route('employees.index') }}" class="btn btn-secondary ml-2 transform hover:scale-105 transition duration-300">Go Back</a>
-        </div>
+      
     </form>
+    <div class="mb-4 mt-4">
+    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transform hover:scale-105 transition duration-300">Create Employee</button>
+    <a href="{{ route('employees.index') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transform hover:scale-105 transition duration-300">Go Back</a>
+</div>
+
+
+
 </div>
 @endsection
