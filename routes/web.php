@@ -34,6 +34,8 @@ Route::get('/user/schedule', 'App\Http\Controllers\userscheduleController@index'
 });
 
 Route::resource('employees', 'App\Http\Controllers\EmployeeController');
+Route::post('/employees', 'App\Http\Controllers\EmployeeController@store')->name('employees.store');
+
 Route::delete('employees/{id}', 'App\Http\Controllers\EmployeeController@destroy')->name('employees.destroy');
 
 Route::resource('cashadvance', 'App\Http\Controllers\CashAdvanceController');
