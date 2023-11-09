@@ -4,7 +4,7 @@
 <div class="container mx-auto p-6">
     <h2 class="text-2xl font-semibold mb-4">Create New Employee</h2>
     <form method="post" action="{{ route('employees.store') }}" class="bg-white shadow-md p-4 rounded-lg">
-        @csrf
+@csrf
         <div class="mb-4">
             <label for="first_name" class="block text-gray-600">First Name:</label>
             <input type="text" class="form-input" name="first_name" id="first_name" placeholder="Enter first name" required>
@@ -29,10 +29,10 @@
             <label for="password" class="block text-gray-600">Password:</label>
             <input type="password" class="form-input" name="password" id="password" placeholder="Enter password" required>
         </div>
-      
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transform hover:scale-105 transition duration-300">Create Employee</button>
     </form>
     <div class="mb-4 mt-4">
-    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transform hover:scale-105 transition duration-300">Create Employee</button>
+  
     <a href="{{ route('employees.index') }}" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transform hover:scale-105 transition duration-300">Go Back</a>
 </div>
 
@@ -40,3 +40,4 @@
 
 </div>
 @endsection
+
